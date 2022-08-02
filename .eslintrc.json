@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "@typescript-eslint", "prettier"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -23,8 +23,26 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "extends": ["plugin:@nrwl/nx/typescript", "plugin:react/recommended"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "react/jsx-closing-bracket-location": 1,
+        "react/jsx-closing-tag-location": 1,
+        "no-multi-spaces": 1,
+        "react/jsx-tag-spacing": 1,
+        "react/jsx-pascal-case": 1,
+        "react/jsx-curly-spacing": 1,
+        "react/jsx-boolean-value": 1,
+        "react/no-string-refs": 0,
+        "react/jsx-wrap-multilines": 1,
+        "react/self-closing-comp": 1,
+        "react/jsx-no-bind": 0,
+        "react/require-render-return": 1,
+        "react/sort-comp": 1,
+        "react/no-is-mounted": 1,
+        "react/react-in-jsx-scope": 0,
+        "react/prop-types": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
